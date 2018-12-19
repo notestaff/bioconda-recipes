@@ -1,5 +1,5 @@
 {% set name = "kraken" %}
-{% set version = "1.0.0_fork3_upd1" %}
+{% set version = "1.0.0_fork3upd1" %}
 {% set sha256 = "1db47d106179200d713c0af1f9290e841f2dd3e9b63a8e075b4f5572fb73c98c" %}
 
 package:
