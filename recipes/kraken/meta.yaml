@@ -12,6 +12,7 @@ source:
 
 build:
   number: 1
+  skip: True  # [osx]
   has_prefix_files:
     - libexec/kraken
     - libexec/kraken-build
