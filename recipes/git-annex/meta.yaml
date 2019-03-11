@@ -29,13 +29,9 @@ requirements:
     - libxml2
     - gnutls
     - sqlite
+    - rsync
 
   run:
-    - viennarna ==2.3.3
-    - rnaz ==2.1
-    - locarna ==1.9.1
-    - infernal ==1.1.2
-    - rnacode ==0.3
     - gmp
     - perl
     - zlib
@@ -49,6 +45,9 @@ requirements:
     - libxml2
     - gnutls
     - sqlite
+    - libgcc-ng
+    - libstdcxx-ng
+    - rsync
 
 test:
   commands:
