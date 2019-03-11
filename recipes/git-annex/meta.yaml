@@ -1,6 +1,6 @@
 {% set name = "git-annex" %}
-{% set version = "" %}
-{% set sha256 = "7.20190219" %}
+{% set version = "7.20190219" %}
+{% set sha256 = "82f3c10fe96141b1564bfc894a36c0e53bdf6843f09782c380d1a616bf96c104" %}
 
 package:
   name: {{ name }}
@@ -56,11 +56,6 @@ test:
     - git-annex test
 
 about:
-  home: http://rna.tbi.univie.ac.at/rnalien/tool
+  home: http://git-annex.branchable.com
   license: GPL-3
-  summary: A tool for unsupervised construction of RNA family models
-
-extra:
-  identifiers:
-    - biotools:RNAlien
-    - doi:10.1093/nar/gkw558
+  summary: A tool for managing large files with git
