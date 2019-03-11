@@ -13,6 +13,7 @@ cp $RECIPE_DIR/stack-lts-9.9.yaml stack.yaml
 stack setup
 stack update
 stack install --extra-include-dirs ${PREFIX}/include --local-bin-path ${PREFIX}/bin
+ln -s ${PREFIX}/bin/git-annex ${PREFIX}/bin/git-annex-shell
 which git-annex
 git-annex version
 #git-annex test
