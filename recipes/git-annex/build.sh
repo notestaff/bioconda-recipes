@@ -51,7 +51,7 @@ ln -s /lib64/libpthread.so.0 ${BUILD_PREFIX}/x86_64-conda_cos6-linux-gnu/sysroot
 
 #git clone git://git-annex.branchable.com/ git-annex
 #pushd git-annex
-cp $RECIPE_DIR/stack-lts-9.9.yaml stack.yaml
+#cp $RECIPE_DIR/stack-lts-9.9.yaml stack.yaml
 mkdir -p ~/.stack
 echo "extra-include-dirs:"  > ~/.stack/config.yaml
 echo "- ${PREFIX}/include" >> ~/.stack/config.yaml
@@ -62,9 +62,10 @@ echo "ghc-options:" >> ~/.stack/config.yaml
 echo "  \"\$everything\": -optc-I${PREFIX}/include -optl-L${PREFIX}/lib" >> ~/.stack/config.yaml
 echo "apply-ghc-options: everything" >> ~/.stack/config.yaml
 
-stack setup
-stack update
-stack install --extra-include-dirs ${PREFIX}/include --extra-lib-dirs ${PREFIX}/lib --ghc-options " -optc-I${PREFIX}/include -optl-L${PREFIX}/lib "  --local-bin-path ${PREFIX}/bin
+cp $RECIPE_DIR/stack.yaml .
+stack --resolver=lts-11.22 setup
+stack --resolver=lts-11.22 update
+stack --resolver=lts-11.22 install --extra-include-dirs ${PREFIX}/include --extra-lib-dirs ${PREFIX}/lib --ghc-options " -optc-I${PREFIX}/include -optl-L${PREFIX}/lib "  --local-bin-path ${PREFIX}/bin
 ln -s ${PREFIX}/bin/git-annex ${PREFIX}/bin/git-annex-shell
 which git-annex
 git-annex version
