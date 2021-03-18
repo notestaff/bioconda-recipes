@@ -7,9 +7,11 @@ package:
 source:
   url: https://pypi.io/packages/source/s/snakemake/snakemake-{{ version }}.tar.gz
   sha256: 152b791eef62955d8cdd6132b7a1af9b3d3b35cbf371d9cfb6926cd6c4ff4f00
+  patches:
+    - 0001-reduce-MAX_ARG_LEN.patch
 
 build:
-  number: 0
+  number: 1
   noarch: generic
 
 requirements:

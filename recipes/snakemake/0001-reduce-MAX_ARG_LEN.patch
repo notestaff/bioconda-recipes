@@ -1,0 +1,25 @@
+From 1b71357386092606f16fa96863399bdca8cb9239 Mon Sep 17 00:00:00 2001
+From: Ilya Shlyakhter <ilya.a.shlyakhter@questdiagnostics.com>
+Date: Wed, 17 Mar 2021 23:32:55 -0400
+Subject: [PATCH] reduce MAX_ARG_LEN
+
+---
+ snakemake/shell.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/snakemake/shell.py b/snakemake/shell.py
+index d7efd5c9..dc34ffa1 100644
+--- a/snakemake/shell.py
++++ b/snakemake/shell.py
+@@ -35,7 +35,7 @@ if not isinstance(sys.stdout, _io.TextIOWrapper):
+ # especially when doing `sh -c 'long script from user'`. On Linux, it's
+ # hardcoded in the kernel as 32 pages, or 128kB. On OSX it appears to be
+ # close to `getconf ARG_MAX`, about 253kb.
+-MAX_ARG_LEN = 16 * 4096 - 1
++MAX_ARG_LEN = 1 * 4096 - 1
+ 
+ 
+ class shell:
+-- 
+2.30.2
+
